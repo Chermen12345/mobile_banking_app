@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       widget.current_icon = index;
     });
-    widget.controller.animateToPage(index, duration: Duration(milliseconds: 600), curve: Curves.linear);
+    widget.controller.animateToPage(index, duration: Duration(milliseconds: 400), curve: Curves.linear);
   }
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_banking_app/widgets/my_icon.dart';
 
@@ -11,27 +12,32 @@ class HomePage extends StatelessWidget {
         child: SizedBox(width: double.infinity,
         height: 1000,
         child: Column(children: [
-          Row(
+          FadeInDown(
+                animate: true,
+                duration: Duration(milliseconds: 700),
+          child:Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10,top: 25),
-                    child: Container(decoration: BoxDecoration(gradient: 
-                    LinearGradient(begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,colors: [Color(0xFFA772FF),Color(0xFF3C8BD4)]),
-                    borderRadius: BorderRadius.circular(100),
+              
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10,top: 25),
+                      child: Container(decoration: BoxDecoration(gradient: 
+                      LinearGradient(begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,colors: [Color(0xFFA772FF),Color(0xFF3C8BD4)]),
+                      borderRadius: BorderRadius.circular(100),
+                      ),
+                      width: 54,
+                      height: 54,
+                      ),
                     ),
-                    width: 54,
-                    height: 54,
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 10,top: 25),
-                  child: Text('Chermen Bekuzarov'),)
-
-                ],
-              ),
+                    Padding(padding: EdgeInsets.only(left: 10,top: 25),
+                    child: Text('Chermen Bekuzarov'),)
+                
+                  ],
+                ),
+              
               Row(
                 children: [
                   Padding(
@@ -41,33 +47,43 @@ class HomePage extends StatelessWidget {
                 ],
               )
             ],
+          ),),
+          FadeInDown(child: BankCard(),
+          duration: Duration(milliseconds: 900),),
+          FadeInDown(
+            duration: Duration(milliseconds: 1100),
+            child: Padding(padding: EdgeInsets.only(left: 20,top: 20),
+            child: Align(alignment: Alignment.centerLeft,
+            child: Text('Balance: 10955.58\$',style: TextStyle(color: Colors.black,
+            fontSize: 24),))),
           ),
-          BankCard(),
-          Padding(padding: EdgeInsets.only(left: 20,top: 20),
-          child: Align(alignment: Alignment.centerLeft,
-          child: Text('Balance: 10955.58\$',style: TextStyle(color: Colors.black,
-          fontSize: 24),))),
-          Padding(padding: EdgeInsets.only(left: 20,top: 5),
-          child: Align(alignment: Alignment.centerLeft,
-          child: Text('Latest transactions:',style: TextStyle(color: Colors.black,
-          fontSize: 20),))),
+          FadeInDown(
+            duration: Duration(milliseconds: 1300),
+            child: Padding(padding: EdgeInsets.only(left: 20,top: 5),
+            child: Align(alignment: Alignment.centerLeft,
+            child: Text('Latest transactions:',style: TextStyle(color: Colors.black,
+            fontSize: 20),))),
+          ),
           Expanded(
-            
-            child: ListView(scrollDirection: Axis.vertical,children: [
-              OneTransaction(name: 'ivan', lastName: 'ivanov', cash: '125.9\$'),
-              OneTransaction(name: 'alexandr', lastName: 'vasin', cash: '125\$'),
-              OneTransaction(name: 'ivan', lastName: 'vladov', cash: '125\$'),
-              OneTransaction(name: 'juri', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'sergei', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'juri', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'sergei', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'juri', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'sergei', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'chermen', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'vanya', lastName: 'ivanov', cash: '125\$'),
-              OneTransaction(name: 'denis', lastName: 'ivanov', cash: '125\$')
-            ],),
-          )
+              
+              child: FadeInDown(
+                duration: Duration(milliseconds: 1700),
+                child: ListView(scrollDirection: Axis.vertical,children: [
+                  OneTransaction(name: 'ivan', lastName: 'ivanov', cash: '125.9\$'),
+                  OneTransaction(name: 'alexandr', lastName: 'vasin', cash: '125\$'),
+                  OneTransaction(name: 'ivan', lastName: 'vladov', cash: '125\$'),
+                  OneTransaction(name: 'juri', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'sergei', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'juri', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'sergei', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'juri', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'sergei', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'chermen', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'vanya', lastName: 'ivanov', cash: '125\$'),
+                  OneTransaction(name: 'denis', lastName: 'ivanov', cash: '125\$')
+                ],),
+              ),
+            ),
         ],
         
         ),
